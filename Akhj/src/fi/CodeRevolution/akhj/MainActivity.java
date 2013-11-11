@@ -3,6 +3,7 @@ package fi.CodeRevolution.akhj;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import fi.CodeRevolution.akhj.R;
 
 public class MainActivity extends Activity {
 
