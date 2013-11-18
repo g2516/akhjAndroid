@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip" >
+    
+    <TextView 
+        android:id="@+id/carName"
+        android:singleLine="true"
+        android:text="Name"
+        android:textSize="12sp"
+        
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        />
+    
+    <TextView 
+        android:id="@+id/carManufacturer"
+        android:singleLine="true"
+        android:text="Manufacturer"
+        android:textSize="12sp"
+        
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/carName"
+        />
+    
+    <TextView 
+        android:id="@+id/carModel"
+        android:singleLine="true"
+        android:text="Model"
+        android:textSize="12sp"
+        
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/carModel"
+        />
+    
+
+</RelativeLayout>
