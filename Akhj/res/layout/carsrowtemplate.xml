@@ -15,30 +15,29 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         />
-    
-    <TextView 
+
+    <TextView
         android:id="@+id/carManufacturer"
-        android:singleLine="true"
-        android:text="Manufacturer"
-        android:textSize="12sp"
-        
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/carName"
-        />
-    
-    <TextView 
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/carName"
+        android:layout_alignBottom="@+id/carName"
+        android:layout_marginLeft="24dp"
+        android:layout_toRightOf="@+id/carName"
+        android:singleLine="true"
+        android:text="Manufacturer"        
+        android:textSize="12sp" />
+
+    <TextView
         android:id="@+id/carModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/carManufacturer"
+        android:layout_alignBottom="@+id/carManufacturer"
+        android:layout_marginLeft="48dp"
+        android:layout_toRightOf="@+id/carManufacturer"
         android:singleLine="true"
         android:text="Model"
-        android:textSize="12sp"
-        
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/carModel"
-        />
-    
+        android:textSize="12sp" />
 
 </RelativeLayout>

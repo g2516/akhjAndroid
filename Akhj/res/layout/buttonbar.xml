@@ -5,25 +5,21 @@
     
 <Button
     android:id="@+id/addButton"
-    android:text="+"
-    android:onClick="addNew"
-    
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
     android:layout_toLeftOf="@+id/backButton"
-    />
+    android:onClick="addNew"
+    android:text="+" />
 
 <Button
     android:id="@+id/backButton"
-    android:text="Back"
-    android:onClick="backTo"
-    
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
     android:layout_alignParentBottom="true"
-    />
+    android:layout_centerHorizontal="true"
+    android:onClick="backTo"
+    android:text="Back" />
 
 <Button
     android:id="@+id/removeButton"
