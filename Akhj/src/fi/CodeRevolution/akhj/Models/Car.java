@@ -1,7 +1,6 @@
 
 package fi.CodeRevolution.akhj.Models;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
