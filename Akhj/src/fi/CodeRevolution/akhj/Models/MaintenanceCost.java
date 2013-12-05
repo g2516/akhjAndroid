@@ -12,22 +12,22 @@ import java.util.Date;
 public class MaintenanceCost extends Cost {
 
 	// Attributes
-	private String maintenanceTarget;
+	private String maintenancetarget;
 
 	// Constructor
-	public MaintenanceCost(int id, int carId, Date date, float price,
+	public MaintenanceCost(int id, int carId, String date, float price,
 			float kilometers, String maintenanceTarget) {
 		super(id, carId, date, price, kilometers);
-		this.maintenanceTarget = maintenanceTarget;
+		this.maintenancetarget = maintenanceTarget;
 	}
 	
 	// Getters and setters
 	public String getMaintenanceTarget() {
-		return maintenanceTarget;
+		return maintenancetarget;
 	}
 
 	public void setMaintenanceTarget(String maintenanceTarget) {
-		this.maintenanceTarget = maintenanceTarget;
+		this.maintenancetarget = maintenanceTarget;
 	}
 	
 }

@@ -14,14 +14,14 @@ public class Cost {
 	// Attributes
 	private int id;
 	private int carId;
-	private Date date;
+	private String date;
 	private float price;
 	private float kilometers;
 	private Date created;
 	private Date modified;
 	
 	// Constructor
-	public Cost(int id, int carId, Date date, float price, float kilometers) {
+	public Cost(int id, int carId, String date, float price, float kilometers) {
 		this.id = id;
 		this.carId = carId;
 		this.date = date;
@@ -49,11 +49,11 @@ public class Cost {
 		this.carId = carId;
 	}
 	
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	

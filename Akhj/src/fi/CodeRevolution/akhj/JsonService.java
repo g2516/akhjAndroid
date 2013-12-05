@@ -15,7 +15,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -85,6 +85,7 @@ public class JsonService extends AsyncTask<JSONObject,Void,String> {
 	    return "notOK";
 	}
 	
+	@Override
 	protected void onPostExecute(String response) {
 	    // TODO: check this.exception 
 	    // TODO: do something with the feed
@@ -95,7 +96,7 @@ public class JsonService extends AsyncTask<JSONObject,Void,String> {
 		try {
 			is = httpEntity.getContent();
             BufferedReader reader = new BufferedReader(new InputStreamReader(
-                    is, "iso-8859-1"), 8);
+                    is, "utf-8"), 8);
             StringBuilder sb = new StringBuilder();
             String line = null;
             while ((line = reader.readLine()) != null) {

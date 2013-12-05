@@ -15,7 +15,7 @@ public class RefillCost extends Cost{
 	private float litres;
 
 	// Constructor
-	public RefillCost(int id, int carId, Date date, float price,
+	public RefillCost(int id, int carId, String date, float price,
 			float kilometers, float litres) {
 		super(id, carId, date, price, kilometers);
 		this.litres = litres;
