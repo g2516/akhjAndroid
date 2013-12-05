@@ -1,5 +1,6 @@
 package fi.CodeRevolution.akhj;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -61,11 +62,13 @@ public class UserActivity extends ButtonBarActivity{
     {
     	ArrayList<Car> autot = new ArrayList<Car>();
     	Date asd = new Date(System.currentTimeMillis());
+    	SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd");
+    	String sad = simpleDate.format(asd);
     	
     	for(int i = 0; i < 5; i++)
     	{
     		autot.add(new Car(
-    				i, i, "nimi"+i, "volvo", "v70", "moottori", 1991, 5, asd, 2000, 215  
+    				i, i, "nimi"+i, "volvo", "v70", "moottori", 1991, 5, sad, 2000, 215  
     				));
     	}
     	return autot;

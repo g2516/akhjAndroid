@@ -12,32 +12,32 @@ import java.util.Date;
 public class InsuranceCost extends Cost {
 
 	// Attributes
-	private String insuranceType;
-	private String insuranceCompany;
+	private String insurancetype;
+	private String insurancecompany;
 	
 	// Constructor
-	public InsuranceCost(int id, int carId, Date date, float price,
+	public InsuranceCost(int id, int carId, String date, float price,
 			float kilometers, String insuranceType, String insuranceCompany) {
 		super(id, carId, date, price, kilometers);
-		this.insuranceType = insuranceType;
-		this.insuranceCompany = insuranceCompany;
+		this.insurancetype = insuranceType;
+		this.insurancecompany = insuranceCompany;
 	}
 
 	// Getters and setters
 	public String getInsuranceType() {
-		return insuranceType;
+		return insurancetype;
 	}
 
 	public void setInsuranceType(String insuranceType) {
-		this.insuranceType = insuranceType;
+		this.insurancetype = insuranceType;
 	}
 	
 	public String getInsuranceCompany() {
-		return insuranceCompany;
+		return insurancecompany;
 	}
 	
 	public void setInsuranceCompany(String insuranceCompany) {
-		this.insuranceCompany = insuranceCompany;
+		this.insurancecompany = insuranceCompany;
 	}
 	
 }

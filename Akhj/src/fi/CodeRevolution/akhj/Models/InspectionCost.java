@@ -12,32 +12,32 @@ import java.util.Date;
 public class InspectionCost extends Cost {
 	
 	// Attributes
-	private String inspectionStation;
-	private String notes;				// notifications & repairsuggestions
+	private String inspectionstation;
+	private String repairtarget;				// notifications & repairsuggestions
 	
 	// Constructor
-	public InspectionCost(int id, int carId, Date date, float price,
+	public InspectionCost(int id, int carId, String date, float price,
 			float kilometers, String inspectionStation, String notes) {
 		super(id, carId, date, price, kilometers);
-		this.inspectionStation = inspectionStation;
-		this.notes = notes;
+		this.inspectionstation = inspectionStation;
+		this.repairtarget = notes;
 	}	
 
 	// Getters and setters
 	public String getInspectionStation() {
-		return inspectionStation;
+		return inspectionstation;
 	}
 	
 	public void setInspectionStation(String inspectionStation) {
-		this.inspectionStation = inspectionStation;
+		this.inspectionstation = inspectionStation;
 	}
 	
 	public String getNotes() {
-		return notes;
+		return this.repairtarget;
 	}
 	
 	public void setNotes(String notes) {
-		this.notes = notes;
+		this.repairtarget = notes;
 	}
 	
 }

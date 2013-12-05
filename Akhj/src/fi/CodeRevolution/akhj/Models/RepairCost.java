@@ -12,22 +12,22 @@ import java.util.Date;
 public class RepairCost extends Cost {
 	
 	// Attributes
-	private String repairTarget;
+	private String repairtarget;
 
 	// Constructor
-	public RepairCost(int id, int carId, Date date, float price,
+	public RepairCost(int id, int carId, String date, float price,
 			float kilometers, String repairTarget) {
 		super(id, carId, date, price, kilometers);
-		this.repairTarget = repairTarget;
+		this.repairtarget = repairTarget;
 	}
 
 	// Getters and setters
 	public String getRepairTarget() {
-		return repairTarget;
+		return repairtarget;
 	}
 
 	public void setRepairTarget(String repairTarget) {
-		this.repairTarget = repairTarget;
+		this.repairtarget = repairTarget;
 	}
 
 }

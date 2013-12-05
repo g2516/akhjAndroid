@@ -1,7 +1,6 @@
 
 package fi.CodeRevolution.akhj.Models;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -56,7 +55,7 @@ public class Car {
 	/**
 	 * Date the car was purchased.
 	 */
-	private Date purchaseDate;
+	private String date;
 	
 	/**
 	 * Purchase value of the car.
@@ -66,7 +65,7 @@ public class Car {
 	/**
 	 * Kilometers driven at the purchase moment.
 	 */
-	private float kilometersOnPurchase;
+	private float kilometers;
 	
 	/**
 	 * Date-time when created on database.
@@ -95,7 +94,7 @@ public class Car {
 	 * @param kilometersOnPurchase
 	 */
 	public Car(int id, int ownerId, String name, String manufacturer, String model, String motor, 
-			int year, float consumption, Date purchaseDate, float price, float kilometersOnPurchase) {
+			int year, float consumption, String purchaseDate, float price, float kilometersOnPurchase) {
 		this.id = id;
 		this.ownerId = ownerId;
 		this.name = name;
@@ -104,9 +103,9 @@ public class Car {
 		this.motor = motor;
 		this.year = year;
 		this.consumption = consumption;
-		this.purchaseDate =  purchaseDate;
+		this.date =  purchaseDate;
 		this.price = price;
-		this.kilometersOnPurchase = kilometersOnPurchase;
+		this.kilometers = kilometersOnPurchase;
 		
 		this.created = new Date();
 		this.modified = new Date();
@@ -177,12 +176,12 @@ public class Car {
 		this.consumption = consumption;
 	}
 
-	public Date getPurchaseDate() {
-		return purchaseDate;
+	public String getDate() {
+		return date;
 	}
 
-	public void setPurchaseDate(Date purchaseDate) {
-		this.purchaseDate = purchaseDate;
+	public void setDate(String purchaseDate) {
+		this.date = purchaseDate;
 	}
 
 	public float getPrice() {
@@ -193,12 +192,12 @@ public class Car {
 		this.price = price;
 	}
 
-	public float getKilometersOnPurchase() {
-		return kilometersOnPurchase;
+	public float getKilometers() {
+		return kilometers;
 	}
 
-	public void setKilometersOnPurchase(float kilometersOnPurchase) {
-		this.kilometersOnPurchase = kilometersOnPurchase;
+	public void setKilometers(float kilometersOnPurchase) {
+		this.kilometers = kilometersOnPurchase;
 	}
 
 	public Date getCreated() {
