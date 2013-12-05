@@ -4,5 +4,10 @@
     <string name="app_name">Akhj</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="login">Kirjaudu sisään</string>
+    <string name="loginBtn">Kirjaudu</string>
+    <string name="akhj">Auton Kulujen Hallinta Järjestelmä</string>
+    <string name="uname">Käyttäjätunnus</string>
+    <string name="pwd">Salasana</string>
 
 </resources>
