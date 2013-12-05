@@ -1,21 +1,14 @@
 package fi.CodeRevolution.akhj;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.content.Intent;
 import android.view.Menu;
-import fi.CodeRevolution.akhj.R;
 
-public class MainActivity extends Activity {
-
+public class CarSettingsActivity extends ButtonBarActivity {
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.userlayout); 
-        
-        Intent homepage = new Intent(MainActivity.this, UserActivity.class);
-        startActivity(homepage);
+        setContentView(R.layout.carsettingslayout); 
     }
 
 
