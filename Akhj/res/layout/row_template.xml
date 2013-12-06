@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    
+    <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+  		 android:layout_width="fill_parent"
+        android:id="@+id/tableRow1"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/carManufacturer" >
+        
+        <TextView 
+        android:id="@+id/column1"
+        android:singleLine="true"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        />
+
+        <TextView 
+        android:id="@+id/column2"
+        android:singleLine="true"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        />
+        <TextView 
+        android:id="@+id/column3"
+        android:singleLine="true"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        />
+        <TextView 
+        android:id="@+id/column4"
+        android:singleLine="true"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        />
+
+    </TableRow>
+
+
