@@ -1,4 +1,4 @@
-package fi.CodeRevolution.kiesi.adapters;
+package fi.CodeRevolution.kiesi.Utils;
 
 import java.util.ArrayList;
 

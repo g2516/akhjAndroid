@@ -7,8 +7,9 @@ import org.json.JSONObject;
 
 import fi.CodeRevolution.akhj.R;
 import fi.CodeRevolution.kiesi.Models.Car;
-import fi.CodeRevolution.kiesi.Models.JsonService;
 import fi.CodeRevolution.kiesi.Models.MyProperties;
+import fi.CodeRevolution.kiesi.Utils.JsonBuilder;
+import fi.CodeRevolution.kiesi.Utils.JsonService;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -28,6 +29,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
     TextView price;
     TextView kilometrit;
     Button addButton;
+    Button cancelButton;
     int carID;
     
     @Override
@@ -49,8 +51,8 @@ public class CarSettingsActivity extends ButtonBarActivity {
          kilometrit = (TextView)findViewById(R.id.editKilometrit);
         addButton=(Button)findViewById(R.id.addButton);
         addButton.setText("Muokkaa");
-        
-        
+        cancelButton=(Button)findViewById(R.id.removeButton);
+        cancelButton.setText("Peruuta");
         if(carID > -1)
         {
         	this.bindFields();
@@ -83,9 +85,11 @@ public class CarSettingsActivity extends ButtonBarActivity {
 		{
 			this.enableFields(true);
 			addButton.setText("Tallenna");
+			cancelButton.setVisibility(1);
 		}
 		else if(addButton.getText().equals("Tallenna"))
 		{
+			cancelButton.setVisibility(0);
 			this.enableFields(false);
 			Car c=MyProperties.getInstance().user.getCars().get(carID);
 			c.setName(nimi.getText().toString());
@@ -93,23 +97,37 @@ public class CarSettingsActivity extends ButtonBarActivity {
 	        c.setModel(malli.getText().toString());
 	        c.setMotor(moottori.getText().toString());
 	        c.setYear(Integer.parseInt(year.getText().toString()));
-	        c.setConsumption(Float.parseFloat(kulutus.getText().toString()));
+	        c.setConsumption(Double.parseDouble(kulutus.getText().toString()));
 	        c.setDate(date.getText().toString());
-	        c.setPrice(Float.parseFloat(price.getText().toString()));
-	        c.setKilometers(Float.parseFloat(kilometrit.getText().toString()));
+	        c.setPrice(Double.parseDouble(price.getText().toString()));
+	        c.setKilometers(Double.parseDouble(kilometrit.getText().toString()));
 	        
 	        JsonBuilder builder = new JsonBuilder();
-	        JsonService service = new JsonService();
 	        try {
-	        	JSONObject carData = builder.buildJson(c, "car", "teppo.testaaja@foo.bar", "Salakala1", "modify");
+	        	String username=MyProperties.getInstance().user.getEmail();
+	        	String pass=MyProperties.getInstance().user.getPassword();
+	        	
+	        	JSONObject carData = builder.buildJson(c, "car", username, pass, "modify");
 	        	JSONObject response = new JSONObject();
 	        
-	        	response = response = new JsonService().execute(carData).get();
-	        	Toast.makeText(getApplicationContext(), "Tiedot tallennattu", Toast.LENGTH_LONG).show();
+	        	response = new JsonService().execute(carData).get();
+	        	if(response.get("status").equals(true))
+				{
+	        		Toast.makeText(getApplicationContext(), "Tiedot tallennattu", Toast.LENGTH_LONG).show();
+				}
+	        	else
+	        	{
+	        		Toast.makeText(getApplicationContext(), "Tietojen tallennus epäonnistui", Toast.LENGTH_LONG).show();
+	        	}
+	        		
+	        	
 	        } catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -130,7 +148,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
 		{
 			//todo kaikki kentät tyhjiksi koska peruttiin muutokset ja kyseessä on uuden auton luonti
 		}
-		
+		cancelButton.setVisibility(0);
 		
 	    }
 

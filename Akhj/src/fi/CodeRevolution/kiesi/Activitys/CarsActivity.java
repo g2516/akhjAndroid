@@ -9,7 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import fi.CodeRevolution.akhj.R;
 import fi.CodeRevolution.kiesi.Models.MyProperties;
-import fi.CodeRevolution.kiesi.adapters.*;;
+import fi.CodeRevolution.kiesi.Utils.*;
 
 public class CarsActivity extends ButtonBarActivity{
 	ListView listview;

@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import fi.CodeRevolution.akhj.R;
 import fi.CodeRevolution.kiesi.Models.*;
+import fi.CodeRevolution.kiesi.Utils.JsonBuilder;
+import fi.CodeRevolution.kiesi.Utils.JsonService;
 
 
 public class MainActivity extends Activity {
@@ -67,7 +69,7 @@ public class MainActivity extends Activity {
 					JSONObject carJson = carsJson.getJSONObject(i);
 					JSONArray costsJson = carJson.getJSONArray("costs");
 					
-					Car car=builder.parseCar(carJson, userJson.getInt("id"),carJson.getJSONArray("costs"));
+					Car car=builder.parseCar(carJson, userJson.getInt("id"),costsJson);
 					cars.add(car);
 				}
 				u.setCars(cars);

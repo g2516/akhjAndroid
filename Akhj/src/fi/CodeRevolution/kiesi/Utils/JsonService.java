@@ -1,4 +1,4 @@
-package fi.CodeRevolution.kiesi.Models;
+package fi.CodeRevolution.kiesi.Utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -92,6 +92,7 @@ public class JsonService extends AsyncTask<JSONObject,Void,JSONObject> {
 		 
 		
 		try {
+			jObj=null;
 			is = httpEntity.getContent();
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     is, "utf-8"), 8);
@@ -104,6 +105,7 @@ public class JsonService extends AsyncTask<JSONObject,Void,JSONObject> {
             json = sb.toString();
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
+            
         }
  
         

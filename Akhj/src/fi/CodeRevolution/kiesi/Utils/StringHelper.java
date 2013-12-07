@@ -1,4 +1,4 @@
-package fi.CodeRevolution.kiesi.Models;
+package fi.CodeRevolution.kiesi.Utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

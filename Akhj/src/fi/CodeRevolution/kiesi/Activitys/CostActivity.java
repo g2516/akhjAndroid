@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import fi.CodeRevolution.akhj.R;
-import fi.CodeRevolution.kiesi.adapters.CostAdapter;
+import fi.CodeRevolution.kiesi.Utils.CostAdapter;
 
 public class CostActivity extends ButtonBarActivity {
 	

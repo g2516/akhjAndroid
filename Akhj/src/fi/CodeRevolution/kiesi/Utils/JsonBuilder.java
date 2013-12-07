@@ -1,4 +1,4 @@
-package fi.CodeRevolution.kiesi.Activitys;
+package fi.CodeRevolution.kiesi.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -73,7 +73,7 @@ public class JsonBuilder
     		System.out.println("Tapahtui virhe"+ex.getMessage());
     	}
     	
-    	return objectJson;
+    	return fullJson;
     }
 	
     public User parseUser(JSONObject userJson,String pwd) throws JSONException
@@ -176,7 +176,7 @@ public class JsonBuilder
     			date,
     			costJson.getDouble("price"),
     			costJson.getDouble("kilometers"),
-    			costJson.getString("repairTarget")					
+    			costJson.getString("repairtarget")					
 				);
 		
 	}
