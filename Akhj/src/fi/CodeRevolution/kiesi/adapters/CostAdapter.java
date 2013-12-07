@@ -3,7 +3,6 @@ package fi.CodeRevolution.kiesi.adapters;
 import java.util.ArrayList;
 
 import fi.CodeRevolution.akhj.R;
-import fi.CodeRevolution.kiesi.Models.Car;
 import fi.CodeRevolution.kiesi.Models.InspectionCost;
 import fi.CodeRevolution.kiesi.Models.InsuranceCost;
 import fi.CodeRevolution.kiesi.Models.MaintenanceCost;

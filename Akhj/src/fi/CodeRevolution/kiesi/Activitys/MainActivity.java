@@ -7,9 +7,6 @@ import java.util.concurrent.ExecutionException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.google.gson.Gson;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
