@@ -1,7 +1,13 @@
 package fi.CodeRevolution.kiesi.Activitys;
 
+import java.util.concurrent.ExecutionException;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import fi.CodeRevolution.akhj.R;
 import fi.CodeRevolution.kiesi.Models.Car;
+import fi.CodeRevolution.kiesi.Models.JsonService;
 import fi.CodeRevolution.kiesi.Models.MyProperties;
 import android.os.Bundle;
 import android.view.Menu;
@@ -81,8 +87,33 @@ public class CarSettingsActivity extends ButtonBarActivity {
 		else if(addButton.getText().equals("Tallenna"))
 		{
 			this.enableFields(false);
-			Toast.makeText(getApplicationContext(), "Tiedot tallennattu", Toast.LENGTH_LONG).show();
-			
+			Car c=MyProperties.getInstance().user.getCars().get(carID);
+			c.setName(nimi.getText().toString());
+			c.setManufacturer(valmistaja.getText().toString());
+	        c.setModel(malli.getText().toString());
+	        c.setMotor(moottori.getText().toString());
+	        c.setYear(Integer.parseInt(year.getText().toString()));
+	        c.setConsumption(Float.parseFloat(kulutus.getText().toString()));
+	        c.setDate(date.getText().toString());
+	        c.setPrice(Float.parseFloat(price.getText().toString()));
+	        c.setKilometers(Float.parseFloat(kilometrit.getText().toString()));
+	        
+	        JsonBuilder builder = new JsonBuilder();
+	        JsonService service = new JsonService();
+	        try {
+	        	JSONObject carData = builder.buildJson(c, "car", "teppo.testaaja@foo.bar", "Salakala1", "modify");
+	        	JSONObject response = new JSONObject();
+	        
+	        	response = response = new JsonService().execute(carData).get();
+	        	Toast.makeText(getApplicationContext(), "Tiedot tallennattu", Toast.LENGTH_LONG).show();
+	        } catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        
 			//todo tallenna tiedot ensin autoon ja sitten tietokantaan
 			addButton.setText("Muokkaa");
 		}

@@ -6,6 +6,9 @@ import org.json.JSONObject;
 
 import fi.CodeRevolution.kiesi.Models.*;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 
 public class JsonBuilder
 {
@@ -14,7 +17,7 @@ public class JsonBuilder
 	
 	public JsonBuilder()
 	{
-		this.url="http://192.168.1.104/index.php?controller=Android";
+		this.url="http://193.166.88.68/index.php?controller=Android";
 	}
     public JSONObject buildLogin(String username, String password)
     {
@@ -40,6 +43,37 @@ public class JsonBuilder
 			e.printStackTrace();
 		}
     	return fullJson;
+    }
+    
+    /**
+     * Muodostetaan JSONObject syötetystä oliosta.
+     * @param o
+     * @return
+     */
+    public JSONObject buildJson(Object o, String type, String uname, String upass, String action)
+    {
+    	Gson jason = new Gson();
+    	
+    	JSONObject loginJson = new JSONObject();
+    	JSONObject objectJson = new JSONObject();
+    	JSONObject fullJson = new JSONObject();
+    	
+    	try {
+    		loginJson.put("email", uname); //login info
+    		loginJson.put("password", upass); //login info
+    		objectJson.put("login", loginJson); //lisätään login info objectJsoniin
+    		objectJson.put("type", type); //toiminnon tyyppi backendissä (getData. car. cost)
+    		objectJson.put("action", action); //toiminto backendissä (add, modify, delete)
+    		objectJson.put("data", jason.toJson(o)); //toiminnon tarvitsema data (saadaan oliosta)
+    		fullJson.put("json", objectJson); //kasataan kokonainen json, joka lähetetään backendille
+    		fullJson.put("url", this.url); //backendin osoite
+    		
+    	}
+    	catch (JSONException ex) {
+    		System.out.println("Tapahtui virhe"+ex.getMessage());
+    	}
+    	
+    	return objectJson;
     }
 	
     public User parseUser(JSONObject userJson,String pwd) throws JSONException
