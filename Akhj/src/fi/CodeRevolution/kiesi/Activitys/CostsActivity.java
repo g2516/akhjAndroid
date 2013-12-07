@@ -138,8 +138,7 @@ public class CostsActivity extends ButtonBarActivity {
     {
     	checkPageID();
     	 Car c=MyProperties.getInstance().user.getCars().get(pageID);
-         txt = (TextView) findViewById(R.id.carName);
-         txt.setText("Kulut autolle "+c.getName()+" : ");
+         setTitle("Kulut autolle "+c.getName()+" : ");
          
     }
 

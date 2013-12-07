@@ -132,50 +132,62 @@
             android:layout_marginRight="4dip"
             android:background="?android:attr/dividerVertical"/>
    <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="55dip"
-       android:gravity="center_horizontal"
-       android:orientation="horizontal"
-        >
-        
-      <Button
-    android:id="@+id/btnKulut"
-    android:onClick="openCosts"
-    android:layout_width="wrap_content"
+     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:text="Kulut"
-    style="?android:attr/borderlessButtonStyle"
-    />
-      <View
-            android:id="@+id/ViewColorPickerHelper"
-            android:layout_width="1dip"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dip"
-            android:layout_marginTop="4dip"
-            android:background="?android:attr/dividerVertical" />
-     <Button
-    android:id="@+id/btnEdit"
-    android:text="Muokkaa"
-    android:onClick="openEdit"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    style="?android:attr/borderlessButtonStyle"
-    />
-     <View
-            android:id="@+id/ViewColorPickerHelper1"
-            android:layout_width="1dip"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dip"
-            android:layout_marginTop="4dip"
-            android:background="?android:attr/dividerVertical" />
-           <Button
-    android:id="@+id/btnDelete"
-    android:text="Poista"
-    android:onClick="removeSelected"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    style="?android:attr/borderlessButtonStyle"
-    />
+    android:gravity="center_horizontal"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/btnKulut"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="openCosts"
+        android:text="Kulut"
+        android:textColor="#FF0000" />
+
+    <View
+        android:id="@+id/ViewColorPickerHelper"
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dip"
+        android:layout_marginTop="4dip"
+        android:layout_weight="0.01"
+        android:background="?android:attr/dividerVertical" />
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:textColor="#FF0000"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="openEdit"
+        android:text="Muokkaa"
+         />
+
+    <View
+        android:id="@+id/View01"
+        android:layout_width="1dip"
+        android:layout_height="48dp"
+        android:layout_marginBottom="4dip"
+        android:layout_marginTop="4dip"
+        android:layout_weight="0.01"
+        android:background="?android:attr/dividerVertical" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="removeSelected"
+        android:text="Poista"
+        android:textColor="#FF0000" />
 </LinearLayout>
 </LinearLayout>
 

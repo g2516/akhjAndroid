@@ -1,310 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/txtOtsikko"
-            android:layout_width="match_parent"
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
             android:text="@string/nimi"
-            android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="30sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
- <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical"/>
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-           >
+            android:layout_weight="1"
+            android:inputType="text"
+            android:maxWidth="50dp"
+            android:width="50dp" >
 
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/nimi"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <requestFocus />
+        </EditText>
+    </TableRow>
 
-            <EditText
-                android:id="@+id/editName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="text"
-                android:maxWidth="50dp"
-                android:width="50dp" >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:background="?android:attr/dividerVertical" />
 
-                <requestFocus />
-            </EditText>
-        </TableRow>
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/valmistaja"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/editValmistaja"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text" >
+        </EditText>
+    </TableRow>
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/valmistaja"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:background="?android:attr/dividerVertical" />
 
-            <EditText
-                android:id="@+id/editValmistaja"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="text" >
-            </EditText>
-        </TableRow>
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/malli"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/editMalli"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text" >
+        </EditText>
+    </TableRow>
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/malli"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:background="?android:attr/dividerVertical" />
 
-            <EditText
-                android:id="@+id/editMalli"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="text" >
-            </EditText>
-        </TableRow>
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/moottori"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/editMoottori"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text" >
+        </EditText>
+    </TableRow>
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/moottori"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:background="?android:attr/dividerVertical" />
 
-            <EditText
-                android:id="@+id/editMoottori"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="text" >
-            </EditText>
-        </TableRow>
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/vuosi"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TableRow
-            android:id="@+id/tableRow5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/editVuosi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number" >
+        </EditText>
+    </TableRow>
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/vuosi"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:background="?android:attr/dividerVertical" />
 
-            <EditText
-                android:id="@+id/editVuosi"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="number" >
-            </EditText>
-        </TableRow>
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/kulutus"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TableRow
-            android:id="@+id/tableRow6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/editKulutus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="numberDecimal" >
+        </EditText>
+    </TableRow>
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/kulutus"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:background="?android:attr/dividerVertical" />
 
-            <EditText
-                android:id="@+id/editKulutus"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberDecimal" >
-            </EditText>
-        </TableRow>
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/date"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TableRow
-            android:id="@+id/tableRow7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/editDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="date" />
+    </TableRow>
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/date"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:background="?android:attr/dividerVertical" />
 
-            <EditText
-                android:id="@+id/editDate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="date" />
-        </TableRow>
+    <TableRow
+        android:id="@+id/tableRow8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/hinta"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-                <TableRow
-                    android:id="@+id/tableRow8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/editHinta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="numberDecimal" >
+        </EditText>
+    </TableRow>
 
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/hinta"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:background="?android:attr/dividerVertical" />
 
-                    <EditText
-                        android:id="@+id/editHinta"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="numberDecimal" >
-                    </EditText>
-                </TableRow>
+    <TableRow
+        android:id="@+id/tableRow9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dip"
-                    android:layout_marginLeft="4dip"
-                    android:layout_marginRight="4dip"
-                    android:background="?android:attr/dividerVertical" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/kilometrit"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-                <TableRow
-                    android:id="@+id/tableRow9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/editKilometrit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number" >
+        </EditText>
+    </TableRow>
 
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/kilometrit"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <include
+        android:id="@+id/buttonbarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        layout="@layout/buttonbar" />
 
-                    <EditText
-                        android:id="@+id/editKilometrit"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="number" >
-                    </EditText>
-                </TableRow>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dip"
-                    android:layout_marginLeft="4dip"
-                    android:layout_marginRight="4dip"
-                    android:background="?android:attr/dividerVertical" />
-
-                <TableRow
-                    android:id="@+id/TableRow01"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal" >
-
-                </TableRow>
-
-                <include
-                    android:id="@+id/buttonbarContainer"
-                    android:layout_width="match_parent"
-                    android:layout_height="41dp"
-                    layout="@layout/buttonbar" />
-
-    </TableLayout>
+</TableLayout>

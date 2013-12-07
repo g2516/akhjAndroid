@@ -1,39 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/lay"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#f4f4f4"
-    android:gravity="center_vertical"
     android:orientation="vertical" >
 
-  <TextView
-      android:id="@+id/carName"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center_horizontal"
-      android:text="@string/nimi"
-      android:textAlignment="center"
-      android:textSize="23sp" />
+    <ExpandableListView
+        android:id="@+id/lvExp"
+        android:layout_width="match_parent"
+        android:layout_height="384dp"
+        android:layout_weight="1.42" >
+    </ExpandableListView>
 
-  <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical"/>
-  
-            <ExpandableListView
-                android:id="@+id/lvExp"
-                android:layout_width="match_parent"
-                android:layout_height="384dp" />
-   <View
-            android:layout_width="match_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="4dip"
-            android:background="?android:attr/dividerVertical"/>
- <include
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:background="?android:attr/dividerVertical" />
+
+    <include
         android:id="@+id/buttonbarContainer"
         layout="@layout/buttonbar" />
+
 </LinearLayout>

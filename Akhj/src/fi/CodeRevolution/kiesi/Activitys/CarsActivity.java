@@ -25,7 +25,6 @@ import fi.CodeRevolution.kiesi.Utils.*;
 
 public class CarsActivity extends ButtonBarActivity{
 	ListView listview;
-	TextView txtview;
 	private CarAdapter listAdapter;
     private ExpandableListView expListView;
     private List<String> listDataHeader;
@@ -39,9 +38,8 @@ public class CarsActivity extends ButtonBarActivity{
         removeButtom.setVisibility(View.INVISIBLE);
         Button backButtom=(Button)findViewById(R.id.backButton);
         backButtom.setVisibility(View.INVISIBLE);
-        txtview=(TextView)findViewById(R.id.carName);
         User u=MyProperties.getInstance().user;
-        txtview.setText("Käyttäjän "+u.getFirstName()+" kaikki autot");
+        setTitle("Käyttäjän "+u.getFirstName()+" kaikki autot");
         
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
         

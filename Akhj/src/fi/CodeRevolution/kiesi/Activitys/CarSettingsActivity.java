@@ -58,18 +58,17 @@ public class CarSettingsActivity extends ButtonBarActivity {
         cancelButton=(Button)findViewById(R.id.removeButton);
         cancelButton.setText("Peruuta");
         cancelButton.setVisibility(View.INVISIBLE);
-        TextView otsikko=(TextView)findViewById(R.id.txtOtsikko);
         if(carID > -1)
         {
         	this.bindFields();
         	this.enableFields(false);
-        	otsikko.setText("Muokkaa autoa");
+        	setTitle("Muokkaa autoa");
         	
         }
         else
         {
         	addButton.setText("Tallenna");
-        	otsikko.setText("Luo uusi auto");
+        	setTitle("Luo uusi auto");
         }
         
         
@@ -88,6 +87,13 @@ public class CarSettingsActivity extends ButtonBarActivity {
         price.setEnabled(enabled);
         kilometrit.setEnabled(enabled);
 	}
+    
+    @Override
+    public void backTo(View view)
+    {
+    	Intent post = new Intent(CarSettingsActivity.this, CarsActivity.class);
+		startActivity(post);
+    }
 	@Override
     public void addNew(View view) {
 		if(addButton.getText().equals("Muokkaa"))
