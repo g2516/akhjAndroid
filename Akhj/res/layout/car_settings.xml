@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="fill_parent" >
 
+        <TextView
+            android:id="@+id/txtOtsikko"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/nimi"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30sp" />
+
+ <View
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="4dip"
+            android:layout_marginRight="4dip"
+            android:background="?android:attr/dividerVertical"/>
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
@@ -203,7 +219,12 @@
             </EditText>
 
         </TableRow>
-
+<View
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="4dip"
+            android:layout_marginRight="4dip"
+            android:background="?android:attr/dividerVertical"/>
                 <include
                     android:id="@+id/buttonbarContainer"
                     layout="@layout/buttonbar" />

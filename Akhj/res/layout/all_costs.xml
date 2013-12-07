@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lay"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
     android:background="#f4f4f4"
-    android:id="@+id/lay" >
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
   <TextView
-        android:id="@+id/carName"
-		android:textAlignment="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:textSize="22sp" />
-   <View
-        android:id="@+id/spacerLine"
-        style="?android:attr/listSeparatorTextViewStyle"
-	    android:paddingTop="5dip"
-	    android:gravity="center_horizontal"
-	    android:layout_width="match_parent"
-	    android:layout_height="1dp"
-         />
+      android:id="@+id/carName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:text="@string/nimi"
+      android:textAlignment="center"
+      android:textSize="23sp" />
+
+  <View
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="4dip"
+            android:layout_marginRight="4dip"
+            android:background="?android:attr/dividerVertical"/>
+  
             <ExpandableListView
                 android:id="@+id/lvExp"
                 android:layout_width="match_parent"
                 android:layout_height="384dp" />
-   
+   <View
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="4dip"
+            android:layout_marginRight="4dip"
+            android:background="?android:attr/dividerVertical"/>
  <include
         android:id="@+id/buttonbarContainer"
         layout="@layout/buttonbar" />

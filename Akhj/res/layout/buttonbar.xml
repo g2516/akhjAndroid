@@ -1,36 +1,45 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true" >
-    
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+     android:layout_height="55dip"
+     android:gravity="center_horizontal|bottom"
+     android:orientation="horizontal"
+     >
+
+     <Button
+         android:id="@+id/backButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:onClick="backTo"
+         android:text="Back"
+         style="?android:attr/borderlessButtonStyle" />
+<View
+            android:id="@+id/ViewColorPickerHelper3"
+            android:layout_width="1dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dip"
+            android:layout_marginTop="4dip"
+            android:background="?android:attr/dividerVertical" />
 <Button
     android:id="@+id/addButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_toLeftOf="@+id/backButton"
     android:onClick="addNew"
-    android:text="+" />
-
-<Button
-    android:id="@+id/backButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:onClick="backTo"
-    android:text="Back" />
-
+    android:text="+"
+    style="?android:attr/borderlessButtonStyle" />
+<View
+            android:id="@+id/ViewColorPickerHelper2"
+            android:layout_width="1dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dip"
+            android:layout_marginTop="4dip"
+            android:background="?android:attr/dividerVertical" />
 <Button
     android:id="@+id/removeButton"
-    android:text="X"
-    
-    android:onClick="removeSelected"
+    style="?android:attr/borderlessButtonStyle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_toRightOf="@+id/backButton"
-    />
+    android:onClick="removeSelected"
+    android:text="X" />
     
-    
-</RelativeLayout>
+</LinearLayout>
