@@ -38,5 +38,5 @@ public class InspectionCost extends Cost {
 	public void setNotes(String notes) {
 		this.repairtarget = notes;
 	}
-	
+		
 }

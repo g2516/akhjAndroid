@@ -67,5 +67,9 @@ public class Cost {
 	public void setKilometers(double kilometers) {
 		this.kilometers = kilometers;
 	}
-	
+	@Override
+	public String toString()
+	{
+		return "Pvm : "+this.getDate()+", Hinta : "+this.getPrice();
+	}
 }

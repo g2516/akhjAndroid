@@ -53,6 +53,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
         addButton.setText("Muokkaa");
         cancelButton=(Button)findViewById(R.id.removeButton);
         cancelButton.setText("Peruuta");
+        cancelButton.setVisibility(View.INVISIBLE);
         if(carID > -1)
         {
         	this.bindFields();
@@ -85,11 +86,11 @@ public class CarSettingsActivity extends ButtonBarActivity {
 		{
 			this.enableFields(true);
 			addButton.setText("Tallenna");
-			cancelButton.setVisibility(1);
+			cancelButton.setVisibility(View.VISIBLE);
 		}
 		else if(addButton.getText().equals("Tallenna"))
 		{
-			cancelButton.setVisibility(0);
+			cancelButton.setVisibility(View.INVISIBLE);
 			this.enableFields(false);
 			Car c=MyProperties.getInstance().user.getCars().get(carID);
 			c.setName(nimi.getText().toString());
@@ -148,7 +149,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
 		{
 			//todo kaikki kentät tyhjiksi koska peruttiin muutokset ja kyseessä on uuden auton luonti
 		}
-		cancelButton.setVisibility(0);
+		cancelButton.setVisibility(View.INVISIBLE);
 		
 	    }
 
