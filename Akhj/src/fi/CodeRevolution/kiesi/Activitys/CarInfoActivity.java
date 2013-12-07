@@ -107,6 +107,7 @@ public class CarInfoActivity extends ButtonBarActivity{
     
     public void onCarNameClick(View view){
     	Intent homepage = new Intent(CarInfoActivity.this, CarSettingsActivity.class);
+    	homepage.putExtra("carID", pageID);
         startActivity(homepage);
     }
     

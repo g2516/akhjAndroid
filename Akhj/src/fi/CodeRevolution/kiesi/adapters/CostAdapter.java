@@ -131,7 +131,7 @@ public class CostAdapter extends BaseAdapter {
         TextView column4 = (TextView) vi.findViewById(R.id.column4);
 
         column1.setText("Hinta : ");
-        column3.setText("P‰iv‰m‰‰r‰ : ");
+        column3.setText("Pvm : ");
         
         if(type.equals("refill"))
 		{

@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
 			response = new JsonService().execute(login).get();
 			if(response.get("status").equals(true))
 			{
-				Gson g=new Gson();
+				
 				JSONObject userJson=response.getJSONObject("data");
 				JSONArray  carsJson=userJson.getJSONArray("cars");
 				ArrayList<Car> cars=new ArrayList<Car>();

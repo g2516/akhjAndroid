@@ -158,6 +158,7 @@
                 android:inputType="date" />
 
         </TableRow>
+
                 <TableRow
             android:id="@+id/tableRow8"
             android:layout_width="wrap_content"
@@ -179,6 +180,7 @@
              
             </EditText>
         </TableRow>
+
                 <TableRow
             android:id="@+id/tableRow9"
             android:layout_width="wrap_content"
@@ -199,15 +201,11 @@
 				    android:inputType="number" >
              
             </EditText>
+
         </TableRow>
 
-                <TableRow
-                    android:id="@+id/tableRow10"
-                    android:layout_height="wrap_content" >
-
-                    <include
-                        android:id="@+id/buttonbarContainer"
-                        layout="@layout/buttonbar" />
-                </TableRow>
+                <include
+                    android:id="@+id/buttonbarContainer"
+                    layout="@layout/buttonbar" />
 
     </TableLayout>
