@@ -84,6 +84,8 @@ public class JsonBuilder
     public Car parseCar(JSONObject car,int userID, JSONArray costsJson) throws JSONException
     {
     	String date=car.getJSONObject("date").getString("date");
+    	String dateParts[] = date.split(" ");
+        date = dateParts[0];
     	Car c= new Car(
 				car.getInt("id"),
 				userID,
@@ -133,6 +135,8 @@ public class JsonBuilder
     }
     private MaintenanceCost parseMaintenance(JSONObject costJson,int carID) throws JSONException {
     	String date=costJson.getJSONObject("date").getString("date");
+    	String dateParts[] = date.split(" ");
+        date = dateParts[0];
     	return new MaintenanceCost(
     			costJson.getInt("id"),
     			carID,
@@ -145,6 +149,8 @@ public class JsonBuilder
 	}
     private InsuranceCost parseInsurance(JSONObject costJson,int carID) throws JSONException {
     	String date=costJson.getJSONObject("date").getString("date");
+    	String dateParts[] = date.split(" ");
+        date = dateParts[0];
     	return new InsuranceCost(
     			costJson.getInt("id"),
     			carID,
@@ -158,6 +164,8 @@ public class JsonBuilder
 	}
     private RefillCost parseRefill(JSONObject costJson,int carID) throws JSONException {
     	String date=costJson.getJSONObject("date").getString("date");
+    	String dateParts[] = date.split(" ");
+        date = dateParts[0];
     	return new RefillCost(
     			costJson.getInt("id"),
     			carID,
@@ -170,6 +178,8 @@ public class JsonBuilder
 	}
     private RepairCost parseRepair(JSONObject costJson,int carID) throws JSONException {
     	String date=costJson.getJSONObject("date").getString("date");
+    	String dateParts[] = date.split(" ");
+        date = dateParts[0];
     	return new RepairCost(
     			costJson.getInt("id"),
     			carID,
@@ -183,6 +193,8 @@ public class JsonBuilder
     
     private InspectionCost parseInspection(JSONObject costJson,int carID) throws JSONException {
     	String date=costJson.getJSONObject("date").getString("date");
+    	String dateParts[] = date.split(" ");
+        date = dateParts[0];
     	return new InspectionCost(
     			costJson.getInt("id"),
     			carID,

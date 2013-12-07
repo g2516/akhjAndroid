@@ -35,7 +35,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.carsettingslayout); 
+        setContentView(R.layout.car_settings); 
         Bundle extras = getIntent().getExtras();
         carID=extras.getInt("carID");
         

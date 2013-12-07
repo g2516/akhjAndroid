@@ -2,7 +2,6 @@
 package fi.CodeRevolution.kiesi.Models;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Class Car with it's attributes and methods.
@@ -258,5 +257,9 @@ public class Car {
 	public void setMaintenanceCosts(ArrayList<MaintenanceCost> maintenanceCosts) {
 		this.maintenanceCosts = maintenanceCosts;
 	}
-	
+	@Override
+	public String toString()
+	{
+		return "Valmistaja : "+this.getManufacturer()+", Malli : "+this.getModel();
+	}
 }

@@ -7,19 +7,24 @@
     android:id="@+id/lay" >
   <TextView
         android:id="@+id/carName"
-        android:clickable="true"
-        android:onClick="onCarNameClick"
-        
 		android:textAlignment="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         
         android:textSize="22sp" />
-  
+   <View
+        android:id="@+id/spacerLine"
+        style="?android:attr/listSeparatorTextViewStyle"
+	    android:paddingTop="5dip"
+	    android:gravity="center_horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="1dp"
+         />
             <ExpandableListView
                 android:id="@+id/lvExp"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"/>   
+                android:layout_width="match_parent"
+                android:layout_height="384dp" />
+   
  <include
         android:id="@+id/buttonbarContainer"
         layout="@layout/buttonbar" />
