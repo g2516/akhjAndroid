@@ -99,7 +99,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
 		else if(addButton.getText().equals("Tallenna"))
 		{
 			cancelButton.setVisibility(View.INVISIBLE);
-			this.enableFields(false);
+			
 			
                 JsonBuilder builder = new JsonBuilder();
 	        try {
@@ -173,6 +173,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
 	        		}
 	        		else
 	        		{
+	        			this.enableFields(false);
 	        			addButton.setText("Muokkaa");
 	        		}
 	        		
