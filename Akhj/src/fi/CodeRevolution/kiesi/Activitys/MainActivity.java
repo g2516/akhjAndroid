@@ -68,6 +68,7 @@ public class MainActivity extends Activity {
 				for(int i=0;i<carsJson.length();i++)
 				{
 					JSONObject carJson = carsJson.getJSONObject(i);
+					JSONArray costsJson = carJson.getJSONArray("costs");
 					
 					Car car=builder.parseCar(carJson, userJson.getInt("id"),carJson.getJSONArray("costs"));
 					cars.add(car);

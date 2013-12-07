@@ -118,6 +118,11 @@ public class JsonService extends AsyncTask<JSONObject,Void,JSONObject> {
         return jObj;
  
     }
+	
+	public JSONObject sendToBackend(JSONObject o) {
+		JSONObject response = doInBackground(o);
+		return response;
+	}
 
 }
 
