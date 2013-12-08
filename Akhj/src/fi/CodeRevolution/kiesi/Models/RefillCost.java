@@ -20,6 +20,11 @@ public class RefillCost extends Cost{
 		this.litres = litres;
 	}
 	
+	public RefillCost() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	// Getters and setters
 	public double getLitres() {
 		return litres;

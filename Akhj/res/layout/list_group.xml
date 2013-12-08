@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="8dp"
-    android:background="#000000">
-    
-<TextView
-        android:id="@+id/lblListHeader"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
-        android:textSize="17sp"
-        android:textColor="#FF0000" />
-</LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:padding="8dp" >
+
+     <TextView
+         android:id="@+id/lblListHeader"
+         android:layout_width="0dip"
+         android:layout_height="match_parent"
+         android:layout_weight="0.92"
+         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
+         android:textSize="17sp" />
+		<View
+        android:layout_width="2dip"
+        android:layout_height="21dip"
+        android:layout_marginTop="4dip"
+        android:layout_marginBottom="4dip"
+        android:background="?android:attr/dividerVertical" />
+		     <Button
+         android:id="@+id/btnAddCost"
+         android:layout_width="42dp"
+         android:layout_height="match_parent"
+         android:background="?android:attr/selectableItemBackground"
+         android:gravity="center"
+         android:onClick="addNewCost"
+         android:text="@string/add"
+         android:textColor="#FF0000"
+         android:focusable="false" />
+     
+
+ </LinearLayout>

@@ -106,11 +106,12 @@ public class CarAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = infalInflater.inflate(R.layout.list_group, null);
+            convertView = infalInflater.inflate(R.layout.list_item, null);
         }
- 
+        Button delete = (Button) convertView.findViewById(R.id.btnRemove);
+        delete.setTag(groupPosition);
         TextView lblListHeader = (TextView) convertView
-                .findViewById(R.id.lblListHeader);
+                .findViewById(R.id.listItem);
         lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
  

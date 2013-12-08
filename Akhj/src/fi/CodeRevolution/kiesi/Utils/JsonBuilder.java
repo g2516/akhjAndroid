@@ -50,7 +50,7 @@ public class JsonBuilder
      * @param o
      * @return
      */
-    public JSONObject buildJson(Object o, String type, String uname, String upass, String action)
+    public JSONObject buildJson(Object o, String type, String uname, String upass, String action, String costType)
     {
     	Gson jason = new Gson();
     	
@@ -65,6 +65,7 @@ public class JsonBuilder
     		objectJson.put("type", type); //toiminnon tyyppi backendiss‰ (getData. car. cost)
     		objectJson.put("action", action); //toiminto backendiss‰ (add, modify, delete)
     		objectJson.put("data", jason.toJson(o)); //toiminnon tarvitsema data (saadaan oliosta)
+    		objectJson.put("costType", costType); //toiminnon tarvitsema kulutyyppi, tarvitaan vain kulujen k‰sittelyss‰
     		fullJson.put("json", objectJson); //kasataan kokonainen json, joka l‰hetet‰‰n backendille
     		fullJson.put("url", this.url); //backendin osoite
     		

@@ -22,6 +22,11 @@ public class InspectionCost extends Cost {
 		this.repairtarget = notes;
 	}	
 
+	public InspectionCost() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	// Getters and setters
 	public String getInspectionStation() {
 		return inspectionstation;

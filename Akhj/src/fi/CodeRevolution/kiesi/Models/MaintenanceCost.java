@@ -20,6 +20,11 @@ public class MaintenanceCost extends Cost {
 		this.maintenancetarget = maintenanceTarget;
 	}
 	
+	public MaintenanceCost() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	// Getters and setters
 	public String getMaintenanceTarget() {
 		return maintenancetarget;

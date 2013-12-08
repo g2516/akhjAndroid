@@ -22,6 +22,11 @@ public class InsuranceCost extends Cost {
 		this.insurancecompany = insuranceCompany;
 	}
 
+	public InsuranceCost() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	// Getters and setters
 	public String getInsuranceType() {
 		return insurancetype;

@@ -13,7 +13,7 @@
         android:layout_weight="1"
         android:background="?android:attr/selectableItemBackground"
         android:onClick="backTo"
-        android:text="Back"
+        android:text="@string/back"
         android:textColor="#FF0000" />
 
     <View
@@ -34,7 +34,7 @@
         android:textColor="#FF0000"
         android:background="?android:attr/selectableItemBackground"
         android:onClick="addNew"
-        android:text="+"
+        android:text="@string/add"
          />
 
     <View
@@ -54,7 +54,7 @@
         android:layout_weight="1"
         android:background="?android:attr/selectableItemBackground"
         android:onClick="removeSelected"
-        android:text="X"
+        android:text="@string/remove"
         android:textColor="#FF0000" />
 
 </LinearLayout>

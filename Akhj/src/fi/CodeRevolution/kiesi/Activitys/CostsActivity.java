@@ -8,12 +8,12 @@ import java.util.List;
 
 import fi.CodeRevolution.akhj.R;
 import fi.CodeRevolution.kiesi.Models.Car;
-import fi.CodeRevolution.kiesi.Models.MyProperties;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import fi.CodeRevolution.kiesi.Utils.ExpandableListAdapter;
+import fi.CodeRevolution.kiesi.Utils.CostAdapter;
+import fi.CodeRevolution.kiesi.Utils.LoginService;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Button;
@@ -27,7 +27,7 @@ public class CostsActivity extends ButtonBarActivity {
 
 	private TextView txt;
 	private int pageID;
-    private ExpandableListAdapter listAdapter;
+    private CostAdapter listAdapter;
     private ExpandableListView expListView;
     private List<String> listDataHeader;
     private HashMap<String, List<String>> listDataChild;
@@ -51,6 +51,22 @@ public class CostsActivity extends ButtonBarActivity {
         // bind list data
         bindListData();
         initListeners();
+    }
+    
+    
+   
+    public void addNewCost(View view) {
+    	int position=Integer.parseInt(view.getTag().toString());
+    	Intent homepage = new Intent(CostsActivity.this, CostsSettings.class);
+    	homepage.putExtra("carID", pageID);
+    	homepage.putExtra("costID", -1);
+    	homepage.putExtra("type", position);
+        startActivity(homepage);
+    }
+    @Override
+    public void backTo(View view) {
+    	Intent homepage = new Intent(CostsActivity.this, CarsActivity.class);
+        startActivity(homepage);
     }
     
     @Override
@@ -77,7 +93,7 @@ public class CostsActivity extends ButtonBarActivity {
     private void bindListData() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
-        Car c=MyProperties.getInstance().user.getCars().get(pageID);
+        Car c=LoginService.getInstance().user.getCars().get(pageID);
  
         // Adding child data
         List<String> refill = new ArrayList<String>();
@@ -129,7 +145,7 @@ public class CostsActivity extends ButtonBarActivity {
         listDataChild.put(listDataHeader.get(3), inspection);
         listDataChild.put(listDataHeader.get(4), repair);
         
-        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
+        listAdapter = new CostAdapter(this, listDataHeader, listDataChild);
         
         // setting list adapter
         expListView.setAdapter(listAdapter);
@@ -137,7 +153,7 @@ public class CostsActivity extends ButtonBarActivity {
     private void bindCar()
     {
     	checkPageID();
-    	 Car c=MyProperties.getInstance().user.getCars().get(pageID);
+    	 Car c=LoginService.getInstance().user.getCars().get(pageID);
          setTitle("Kulut autolle "+c.getName()+" : ");
          
     }
@@ -153,15 +169,12 @@ public class CostsActivity extends ButtonBarActivity {
             public boolean onChildClick(ExpandableListView parent, View v,
                     int groupPosition, int childPosition, long id) {
                 // TODO Auto-generated method stub
-                Toast.makeText(
-                        getApplicationContext(),
-                        listDataHeader.get(groupPosition)
-                                + " : "
-                                + listDataChild.get(
-                                        listDataHeader.get(groupPosition)).get(
-                                        childPosition), Toast.LENGTH_SHORT)
-                        .show();
-                return false;
+            	Intent homepage = new Intent(CostsActivity.this, CostsSettings.class);
+            	homepage.putExtra("carID", pageID);
+            	homepage.putExtra("costID", childPosition);
+            	homepage.putExtra("type", groupPosition);
+                startActivity(homepage);
+                return true;
             }
         });
 		
@@ -179,13 +192,13 @@ public class CostsActivity extends ButtonBarActivity {
     
     public void checkPageID()
     {
-    	if(this.pageID > MyProperties.getInstance().user.getCars().size()-1)
+    	if(this.pageID > LoginService.getInstance().user.getCars().size()-1)
     	{
     		this.pageID = 0;
     	}
     	else if (this.pageID < 0)
     	{
-    		this.pageID = MyProperties.getInstance().user.getCars().size()-1;
+    		this.pageID = LoginService.getInstance().user.getCars().size()-1;
     	}
     }
 }

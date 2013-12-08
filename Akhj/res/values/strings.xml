@@ -14,13 +14,24 @@
     <string name="vuosi">Vuosimalli</string>
     <string name="kulutus">Kulutus</string>
     <string name="date">Osto Pvm</string>
+    <string name="Pvm">Pvm</string>
     <string name="hinta">Hinta</string>
-    <string name="kilometrit">Km ostohet.</string>
+    <string name="kilometritOsto">Km ostohet.</string>
+    <string name="kilometrit">Kilometrit</string>
     <string name="maintenance">Huolto</string>
     <string name="repair">Korjaus</string>
     <string name="refill">Tankkaus</string>
     <string name="insurance">Vakuutus</string>
-    <string name="inspection">Katsastus</string>
+    <string name="Katsastusasema">Katsastus asema</string>
+    <string name="repairTarget">Korjauksen kohde</string>
+    <string name="Notes">Huomatukset ja korjaus ehdotukset</string>
+    <string name="insuranceType">Vakuutustyyppi</string>
+    <string name="insuranceCompany">Vakuutus yhtiö</string>
     <string name="kulut">Kaikki kulut :</string>
+     <string name="maintenanceTarget">Huollon kohde</string>
+    <string name="litrat">Litrat</string>
+    <string name="back">Back</string>
+     <string name="add">+</string>
+    <string name="remove">x</string>
 
 </resources>

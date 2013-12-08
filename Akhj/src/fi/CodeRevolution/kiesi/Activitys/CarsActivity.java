@@ -15,11 +15,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 import fi.CodeRevolution.akhj.R;
 import fi.CodeRevolution.kiesi.Models.Car;
-import fi.CodeRevolution.kiesi.Models.MyProperties;
 import fi.CodeRevolution.kiesi.Models.User;
 import fi.CodeRevolution.kiesi.Utils.*;
 
@@ -38,13 +36,14 @@ public class CarsActivity extends ButtonBarActivity{
         removeButtom.setVisibility(View.INVISIBLE);
         Button backButtom=(Button)findViewById(R.id.backButton);
         backButtom.setVisibility(View.INVISIBLE);
-        User u=MyProperties.getInstance().user;
+        User u=LoginService.getInstance().user;
         setTitle("Käyttäjän "+u.getFirstName()+" kaikki autot");
         
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
         
      // bind list data
         bindListData();
+        
 
     }
     
@@ -68,17 +67,17 @@ public class CarsActivity extends ButtonBarActivity{
     	int position=Integer.parseInt(view.getTag().toString());
     	 JsonBuilder builder = new JsonBuilder();
 	        try {
-	        	Car c=MyProperties.getInstance().user.getCars().get(position);
-	        	String username=MyProperties.getInstance().user.getEmail();
-	        	String pass=MyProperties.getInstance().user.getPassword();
+	        	Car c=LoginService.getInstance().user.getCars().get(position);
+	        	String username=LoginService.getInstance().user.getEmail();
+	        	String pass=LoginService.getInstance().user.getPassword();
 	        	
-	        	JSONObject carData = builder.buildJson(c, "car", username, pass, "delete");
+	        	JSONObject carData = builder.buildJson(c, "car", username, pass, "delete",null);
 	        	JSONObject response = new JSONObject();
 	        
 	        	response = new JsonService().execute(carData).get();
 	        	if(response.get("status").equals(true))
 				{
-	        		MyProperties.getInstance().user.getCars().remove(position);
+	        		LoginService.getInstance().user.getCars().remove(position);
 	        		this.bindListData();
 	        		Toast.makeText(getApplicationContext(), "Auto poistettu", Toast.LENGTH_LONG).show();
 				}
@@ -107,15 +106,15 @@ public class CarsActivity extends ButtonBarActivity{
         listDataChild = new HashMap<String, Car>();
  
      // Adding Header data
-        for(int i=0;i<MyProperties.getInstance().user.getCars().size();i++)
+        for(int i=0;i<LoginService.getInstance().user.getCars().size();i++)
         {
         	
-        	listDataHeader.add(MyProperties.getInstance().user.getCars().get(i).toString());
+        	listDataHeader.add(LoginService.getInstance().user.getCars().get(i).toString());
         }
      // Header, Child data
         for(int i=0;i<listDataHeader.size();i++)
         {
-        	listDataChild.put(listDataHeader.get(i),MyProperties.getInstance().user.getCars().get(i));
+        	listDataChild.put(listDataHeader.get(i),LoginService.getInstance().user.getCars().get(i));
         	
         }
         

@@ -2,22 +2,18 @@ package fi.CodeRevolution.kiesi.Activitys;
 
 
 
-import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import fi.CodeRevolution.akhj.R;
 import fi.CodeRevolution.kiesi.Models.*;
-import fi.CodeRevolution.kiesi.Utils.JsonBuilder;
-import fi.CodeRevolution.kiesi.Utils.JsonService;
+import fi.CodeRevolution.kiesi.Utils.LoginService;
 
 
 public class MainActivity extends Activity {
@@ -42,39 +38,15 @@ public class MainActivity extends Activity {
     public void login_onClick(View view)
     {
  
-		TextView userName =(TextView) findViewById(R.id.txtUserName);
-		TextView password =(TextView) findViewById(R.id.txtPassword);
+    	EditText userName =(EditText) findViewById(R.id.txtUserName);
+    	EditText password =(EditText) findViewById(R.id.txtPassword);
     	String username =userName.getText().toString();
     	String pwd =password.getText().toString();;
     	
     	
-    	JsonBuilder builder=new JsonBuilder();
-    	JSONObject login=builder.buildLogin(username, pwd);
-
-    	try {
-    		JSONObject response;
-			
-			response = new JsonService().execute(login).get();
-			if(response.get("status").equals(true))
-			{
-				
-				JSONObject userJson=response.getJSONObject("data");
-				JSONArray  carsJson=userJson.getJSONArray("cars");
-				ArrayList<Car> cars=new ArrayList<Car>();
-				
-				User u=builder.parseUser(userJson, pwd);
-				
-				for(int i=0;i<carsJson.length();i++)
-				{
-					JSONObject carJson = carsJson.getJSONObject(i);
-					JSONArray costsJson = carJson.getJSONArray("costs");
-					
-					Car car=builder.parseCar(carJson, userJson.getInt("id"),costsJson);
-					cars.add(car);
-				}
-				u.setCars(cars);
-				MyProperties.getInstance().user=u;
-				
+    	User u=LoginService.login(username, pwd);
+			if(u!=null){
+				LoginService.getInstance().user=u;
 				Intent post = new Intent(MainActivity.this, CarsActivity.class);
 				startActivity(post);
 			}
@@ -82,24 +54,7 @@ public class MainActivity extends Activity {
 			{
 				Toast.makeText(getApplicationContext(), "Sisäänkirjautuminen epäonnistui", Toast.LENGTH_LONG).show();
 			}
-			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-    	
-    	//Date asd = new Date(System.currentTimeMillis());
-    	//SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd");
-    	//String sad = simpleDate.format(asd);
-    	//RepairCost kulu = new RepairCost(1,7,sad,12,12,"etuvalo");
-    	//MaintenanceCost huolto = new MaintenanceCost(1, 7, sad, 12, 12, "etuvalo");
 
     }
 

@@ -1,18 +1,14 @@
 package fi.CodeRevolution.kiesi.Activitys;
 
-import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
-import org.json.JSONArray;
+import java.util.concurrent.ExecutionException;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import fi.CodeRevolution.akhj.R;
 import fi.CodeRevolution.kiesi.Models.Car;
-import fi.CodeRevolution.kiesi.Models.MyProperties;
-import fi.CodeRevolution.kiesi.Models.User;
 import fi.CodeRevolution.kiesi.Utils.JsonBuilder;
 import fi.CodeRevolution.kiesi.Utils.JsonService;
+import fi.CodeRevolution.kiesi.Utils.LoginService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -110,11 +106,11 @@ public class CarSettingsActivity extends ButtonBarActivity {
                 JsonBuilder builder = new JsonBuilder();
 	        try {
 	        	
-	        	String username=MyProperties.getInstance().user.getEmail();
-	        	String pass=MyProperties.getInstance().user.getPassword();
+	        	String username=LoginService.getInstance().user.getEmail();
+	        	String pass=LoginService.getInstance().user.getPassword();
 	        	JSONObject carData;
 	        	if(carID != -1) {
-	    			Car c=MyProperties.getInstance().user.getCars().get(carID);
+	    			Car c=LoginService.getInstance().user.getCars().get(carID);
 	    			c.setName(nimi.getText().toString());
 	    			c.setManufacturer(valmistaja.getText().toString());
 	    	        c.setModel(malli.getText().toString());
@@ -124,7 +120,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
 	    	        c.setDate(date.getText().toString());
 	    	        c.setPrice(Double.parseDouble(price.getText().toString()));
 	    	        c.setKilometers(Double.parseDouble(kilometrit.getText().toString()));
-		        	carData = builder.buildJson(c, "car", username, pass, "modify");
+		        	carData = builder.buildJson(c, "car", username, pass, "modify",null);
 	    			}
 	    			else
 	    			{
@@ -133,14 +129,10 @@ public class CarSettingsActivity extends ButtonBarActivity {
 	                                    Double.parseDouble(kulutus.getText().toString()), date.getText().toString(),
 	                                    Double.parseDouble(price.getText().toString()), Double.parseDouble(kilometrit.getText().toString()));
 	    			
-	    	        	 carData = builder.buildJson(c, "car", username, pass, "add");
+	    	        	 carData = builder.buildJson(c, "car", username, pass, "add",null);
 	    			}
 	        	
 	        	
-	        	
-
-	        	
-
 	        	JSONObject response = new JSONObject();
 	        
 	        	response = new JsonService().execute(carData).get();
@@ -150,30 +142,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
 	        		
 	        		if(carID== -1)
 	        		{
-	        			JSONObject login=builder.buildLogin(username, pass);
-
-	        				response = new JsonService().execute(login).get();
-	        				if(response.get("status").equals(true))
-	        				{
-	        					
-	        					JSONObject userJson=response.getJSONObject("data");
-	        					JSONArray  carsJson=userJson.getJSONArray("cars");
-	        					ArrayList<Car> cars=new ArrayList<Car>();
-	        					
-	        					User u=builder.parseUser(userJson, pass);
-	        					
-	        					for(int i=0;i<carsJson.length();i++)
-	        					{
-	        						JSONObject carJson = carsJson.getJSONObject(i);
-	        						JSONArray costsJson = carJson.getJSONArray("costs");
-	        						
-	        						Car car=builder.parseCar(carJson, userJson.getInt("id"),costsJson);
-	        						cars.add(car);
-	        					}
-	        					u.setCars(cars);
-	        					MyProperties.getInstance().user=u;
-	        					
-	        				}
+	        			LoginService.getInstance().user=LoginService.login(username, pass);
 	        				Intent post = new Intent(CarSettingsActivity.this, CarsActivity.class);
 	        				startActivity(post);
 	        		}
@@ -223,7 +192,7 @@ public class CarSettingsActivity extends ButtonBarActivity {
     private void bindFields()
     {
     	//tällä tavalla heataan tietoja:{ MyProperties.getInstance().user } sisältää kaiken datan.
-    	Car c=MyProperties.getInstance().user.getCars().get(carID);
+    	Car c=LoginService.getInstance().user.getCars().get(carID);
         nimi.setText(c.getName());
         valmistaja.setText(c.getManufacturer());
         malli.setText(c.getModel());

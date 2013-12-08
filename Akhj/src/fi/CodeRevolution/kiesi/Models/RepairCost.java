@@ -20,6 +20,11 @@ public class RepairCost extends Cost {
 		this.repairtarget = repairTarget;
 	}
 
+	public RepairCost() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	// Getters and setters
 	public String getRepairTarget() {
 		return repairtarget;

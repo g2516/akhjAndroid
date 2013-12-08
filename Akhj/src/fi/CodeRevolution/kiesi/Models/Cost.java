@@ -27,6 +27,10 @@ public class Cost {
 		
 	}
 	
+	public Cost() {
+		// TODO Auto-generated constructor stub
+	}
+
 	// Getters and setters
 	public int getId() {
 		return id;
