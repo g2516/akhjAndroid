@@ -145,7 +145,7 @@
         android:layout_weight="1"
         android:background="?android:attr/selectableItemBackground"
         android:onClick="openCosts"
-        android:text="Kulut"
+        android:text="@string/Kulut"
         android:textColor="#FF0000" />
 
     <View
@@ -166,7 +166,7 @@
         android:textColor="#FF0000"
         android:background="?android:attr/selectableItemBackground"
         android:onClick="openEdit"
-        android:text="Muokkaa"
+        android:text="@string/Muokkaa"
          />
 
     <View
@@ -185,8 +185,8 @@
         android:layout_gravity="right"
         android:layout_weight="1"
         android:background="?android:attr/selectableItemBackground"
-        android:onClick="removeSelected"
-        android:text="Poista"
+        android:onClick="deleteSelected"
+        android:text="@string/Poista"
         android:textColor="#FF0000" />
 </LinearLayout>
 </LinearLayout>

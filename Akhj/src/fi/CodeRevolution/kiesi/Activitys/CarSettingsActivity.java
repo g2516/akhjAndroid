@@ -104,71 +104,71 @@ public class CarSettingsActivity extends ButtonBarActivity {
 			
 			
                 JsonBuilder builder = new JsonBuilder();
-	        try {
-	        	
-	        	String username=LoginService.getInstance().user.getEmail();
-	        	String pass=LoginService.getInstance().user.getPassword();
-	        	JSONObject carData;
-	        	if(carID != -1) {
-	    			Car c=LoginService.getInstance().user.getCars().get(carID);
-	    			c.setName(nimi.getText().toString());
-	    			c.setManufacturer(valmistaja.getText().toString());
-	    	        c.setModel(malli.getText().toString());
-	    	        c.setMotor(moottori.getText().toString());
-	    	        c.setYear(Integer.parseInt(year.getText().toString()));
-	    	        c.setConsumption(Double.parseDouble(kulutus.getText().toString()));
-	    	        c.setDate(date.getText().toString());
-	    	        c.setPrice(Double.parseDouble(price.getText().toString()));
-	    	        c.setKilometers(Double.parseDouble(kilometrit.getText().toString()));
-		        	carData = builder.buildJson(c, "car", username, pass, "modify",null);
-	    			}
-	    			else
-	    			{
-	                    Car c = new Car(0, 1, nimi.getText().toString(), valmistaja.getText().toString(), malli.getText().toString(),
-	                                    moottori.getText().toString(), Integer.parseInt(year.getText().toString()),
-	                                    Double.parseDouble(kulutus.getText().toString()), date.getText().toString(),
-	                                    Double.parseDouble(price.getText().toString()), Double.parseDouble(kilometrit.getText().toString()));
-	    			
-	    	        	 carData = builder.buildJson(c, "car", username, pass, "add",null);
-	    			}
-	        	
-	        	
-	        	JSONObject response = new JSONObject();
-	        
-	        	response = new JsonService().execute(carData).get();
-	        	if(response.get("status").equals(true))
-				{
-	        		Toast.makeText(getApplicationContext(), "Tiedot tallennattu", Toast.LENGTH_LONG).show();
-	        		
-	        		if(carID== -1)
-	        		{
-	        			LoginService.getInstance().user=LoginService.login(username, pass);
-	        				Intent post = new Intent(CarSettingsActivity.this, CarsActivity.class);
-	        				startActivity(post);
-	        		}
-	        		else
-	        		{
-	        			this.enableFields(false);
-	        			addButton.setText("Muokkaa");
-	        		}
-	        		
-				}
-	        	else
-	        	{
-	        		Toast.makeText(getApplicationContext(), "Tietojen tallennus epäonnistui", Toast.LENGTH_LONG).show();
-	        	}
-	        		
-	        	
-	        } catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ExecutionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+                try {
+    	        	
+    	        	String username=LoginService.getInstance().user.getEmail();
+    	        	String pass=LoginService.getInstance().user.getPassword();
+    	        	JSONObject carData;
+    	        	if(carID != -1) {
+    	    			Car c=LoginService.getInstance().user.getCars().get(carID);
+    	    			c.setName(nimi.getText().toString());
+    	    			c.setManufacturer(valmistaja.getText().toString());
+    	    	        c.setModel(malli.getText().toString());
+    	    	        c.setMotor(moottori.getText().toString());
+    	    	        c.setYear(Integer.parseInt(year.getText().toString()));
+    	    	        c.setConsumption(Double.parseDouble(kulutus.getText().toString()));
+    	    	        c.setDate(date.getText().toString());
+    	    	        c.setPrice(Double.parseDouble(price.getText().toString()));
+    	    	        c.setKilometers(Double.parseDouble(kilometrit.getText().toString()));
+    		        	carData = builder.buildJson(c, "car", username, pass, "modify",null);
+    	    			}
+    	    			else
+    	    			{
+    	                    Car c = new Car(0, 1, nimi.getText().toString(), valmistaja.getText().toString(), malli.getText().toString(),
+    	                                    moottori.getText().toString(), Integer.parseInt(year.getText().toString()),
+    	                                    Double.parseDouble(kulutus.getText().toString()), date.getText().toString(),
+    	                                    Double.parseDouble(price.getText().toString()), Double.parseDouble(kilometrit.getText().toString()));
+    	    			
+    	    	        	 carData = builder.buildJson(c, "car", username, pass, "add",null);
+    	    			}
+    	        	
+    	        	
+    	        	JSONObject response = new JSONObject();
+    	        
+    	        	response = new JsonService().execute(carData).get();
+    	        	if(response.get("status").equals(true))
+    				{
+    	        		Toast.makeText(getApplicationContext(), "Tiedot tallennattu", Toast.LENGTH_LONG).show();
+    	        		
+    	        		if(carID== -1)
+    	        		{
+    	        			LoginService.getInstance().user=LoginService.login(username, pass);
+    	        				Intent post = new Intent(CarSettingsActivity.this, CarsActivity.class);
+    	        				startActivity(post);
+    	        		}
+    	        		else
+    	        		{
+    	        			this.enableFields(false);
+    	        			addButton.setText("Muokkaa");
+    	        		}
+    	        		
+    				}
+    	        	else
+    	        	{
+    	        		Toast.makeText(getApplicationContext(), "Tietojen tallennus epäonnistui", Toast.LENGTH_LONG).show();
+    	        	}
+    	        		
+    	        	
+    	        } catch (InterruptedException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			} catch (ExecutionException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			} catch (JSONException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			}
 	        
 			
 		}

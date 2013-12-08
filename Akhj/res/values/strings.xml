@@ -27,11 +27,14 @@
     <string name="Notes">Huomatukset ja korjaus ehdotukset</string>
     <string name="insuranceType">Vakuutustyyppi</string>
     <string name="insuranceCompany">Vakuutus yhtiö</string>
-    <string name="kulut">Kaikki kulut :</string>
      <string name="maintenanceTarget">Huollon kohde</string>
     <string name="litrat">Litrat</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
     <string name="back">Back</string>
      <string name="add">+</string>
     <string name="remove">x</string>
-
+	<string name="Poista">Poista</string>
+	<string name="Muokkaa">Muokkaa</string>
+	<string name="Kulut">Kulut</string>
 </resources>

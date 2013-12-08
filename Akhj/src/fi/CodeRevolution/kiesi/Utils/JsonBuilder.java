@@ -3,11 +3,8 @@ package fi.CodeRevolution.kiesi.Utils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import fi.CodeRevolution.kiesi.Models.*;
-
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 
 public class JsonBuilder

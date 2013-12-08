@@ -3,11 +3,8 @@ package fi.CodeRevolution.kiesi.Activitys;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -61,42 +58,40 @@ public class CarsActivity extends ButtonBarActivity{
     	homepage.putExtra("carID", position);
         startActivity(homepage);
     }
-    @Override
-    public void removeSelected(View view)
+    
+    public void deleteSelected(View view)
     {
-    	int position=Integer.parseInt(view.getTag().toString());
-    	 JsonBuilder builder = new JsonBuilder();
-	        try {
-	        	Car c=LoginService.getInstance().user.getCars().get(position);
-	        	String username=LoginService.getInstance().user.getEmail();
-	        	String pass=LoginService.getInstance().user.getPassword();
-	        	
-	        	JSONObject carData = builder.buildJson(c, "car", username, pass, "delete",null);
-	        	JSONObject response = new JSONObject();
-	        
-	        	response = new JsonService().execute(carData).get();
-	        	if(response.get("status").equals(true))
-				{
-	        		LoginService.getInstance().user.getCars().remove(position);
-	        		this.bindListData();
-	        		Toast.makeText(getApplicationContext(), "Auto poistettu", Toast.LENGTH_LONG).show();
-				}
-	        	else
-	        	{
-	        		Toast.makeText(getApplicationContext(), "Auton poisto epäonnistui", Toast.LENGTH_LONG).show();
-	        	}
-	        		
-	        	
-	        } catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ExecutionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+    	final int position=Integer.parseInt(view.getTag().toString());
+    	AlertDialog.Builder builder = new AlertDialog.Builder(CarsActivity.this);
+    	// Add the buttons
+    	builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+    		
+    	           public void onClick(DialogInterface dialog, int id) {
+    	        	   
+    	      	        if(LoginService.removeCar(position))
+    	      	        {
+    	      	        	Toast.makeText(getApplicationContext(), "Auto poistettu", Toast.LENGTH_LONG).show();
+    	      	        	bindListData();
+    	      	        }
+    	      	        else
+    	      	        {
+    	      	        	Toast.makeText(getApplicationContext(), "Auton poisto epäonnistui", Toast.LENGTH_LONG).show();
+    	      	        	
+    	      	        }
+    	           }
+    	       });
+    	builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+    	           public void onClick(DialogInterface dialog, int id) {
+    	               // User cancelled the dialog
+    	           }
+    	       });
+    	builder.setMessage("Haluatko varmasti poistaa auton?")
+        .setTitle("Poista auto");
+    	// Create the AlertDialog
+    	AlertDialog dialog = builder.create();
+    	dialog.show();
+    	
+    	
     }
     /*
      * Preparing the list data

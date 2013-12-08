@@ -51,6 +51,9 @@ public class CostAdapter extends BaseExpandableListAdapter {
             convertView = infalInflater.inflate(R.layout.list_item, null);
         }
  
+        Button remove = (Button) convertView.findViewById(R.id.btnRemove);
+        remove.setTag(groupPosition+" "+childPosition);
+        
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.listItem);
  

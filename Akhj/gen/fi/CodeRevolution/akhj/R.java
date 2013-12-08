@@ -119,13 +119,17 @@ public final class R {
     }
     public static final class string {
         public static final int Katsastusasema=0x7f050015;
+        public static final int Kulut=0x7f050023;
+        public static final int Muokkaa=0x7f050022;
         public static final int Notes=0x7f050017;
+        public static final int Poista=0x7f050021;
         public static final int Pvm=0x7f05000d;
         public static final int action_settings=0x7f050001;
-        public static final int add=0x7f05001e;
+        public static final int add=0x7f05001f;
         public static final int app_name=0x7f050000;
-        public static final int back=0x7f05001d;
+        public static final int back=0x7f05001e;
         public static final int btnLogin=0x7f050005;
+        public static final int cancel=0x7f05001d;
         public static final int date=0x7f05000c;
         public static final int hello_world=0x7f050002;
         public static final int hinta=0x7f05000e;
@@ -134,17 +138,17 @@ public final class R {
         public static final int insuranceType=0x7f050018;
         public static final int kilometrit=0x7f050010;
         public static final int kilometritOsto=0x7f05000f;
-        public static final int kulut=0x7f05001a;
         public static final int kulutus=0x7f05000b;
-        public static final int litrat=0x7f05001c;
+        public static final int litrat=0x7f05001b;
         public static final int maintenance=0x7f050011;
-        public static final int maintenanceTarget=0x7f05001b;
+        public static final int maintenanceTarget=0x7f05001a;
         public static final int malli=0x7f050008;
         public static final int moottori=0x7f050009;
         public static final int nimi=0x7f050006;
+        public static final int ok=0x7f05001c;
         public static final int pass=0x7f050003;
         public static final int refill=0x7f050013;
-        public static final int remove=0x7f05001f;
+        public static final int remove=0x7f050020;
         public static final int repair=0x7f050012;
         public static final int repairTarget=0x7f050016;
         public static final int username=0x7f050004;

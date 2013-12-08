@@ -4,16 +4,15 @@ package fi.CodeRevolution.kiesi.Activitys;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-
 import fi.CodeRevolution.akhj.R;
-import fi.CodeRevolution.kiesi.Models.Car;
+import fi.CodeRevolution.kiesi.Models.*;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import fi.CodeRevolution.kiesi.Utils.CostAdapter;
-import fi.CodeRevolution.kiesi.Utils.LoginService;
+import fi.CodeRevolution.kiesi.Utils.*;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Button;
@@ -25,7 +24,6 @@ public class CostsActivity extends ButtonBarActivity {
 	TextView txtview;
 	
 
-	private TextView txt;
 	private int pageID;
     private CostAdapter listAdapter;
     private ExpandableListView expListView;
@@ -182,7 +180,43 @@ public class CostsActivity extends ButtonBarActivity {
 		
 	}
     
-
+	 public void deleteSelected(View view)
+	    {
+		 String positions[]=view.getTag().toString().split(" ");
+	    	final int costType=Integer.parseInt(positions[0]);
+	    	final int costID=Integer.parseInt(positions[1]);
+	    	
+	    	
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(CostsActivity.this);
+	    	// Add the buttons
+	    	builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+	    		
+	    	           public void onClick(DialogInterface dialog, int id) {
+	    	        	   
+	    	        	   if(LoginService.removeCost(pageID, costType, costID))
+	    	        	   {
+	    	        		   bindListData();
+	    	        	   Toast.makeText(getApplicationContext(), "Kulu poistettu", Toast.LENGTH_LONG).show();
+	    	        	   }
+	    	        	   else
+	    	        	   {
+	    	        		   Toast.makeText(getApplicationContext(), "Kulun poistaminen epäonnistui", Toast.LENGTH_LONG).show();
+	    	        	   }
+	    	           }
+	    	       });
+	    	builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+	    	           public void onClick(DialogInterface dialog, int id) {
+	    	               // User cancelled the dialog
+	    	           }
+	    	       });
+	    	builder.setMessage("Haluatko varmasti poistaa Kulun?")
+	        .setTitle("Poista Kulu");
+	    	// Create the AlertDialog
+	    	AlertDialog dialog = builder.create();
+	    	dialog.show();
+	    	
+	    	
+	    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
