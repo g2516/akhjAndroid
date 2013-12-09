@@ -32,7 +32,8 @@ public class CarsActivity extends ButtonBarActivity{
         Button removeButtom=(Button)findViewById(R.id.removeButton);
         removeButtom.setVisibility(View.INVISIBLE);
         Button backButtom=(Button)findViewById(R.id.backButton);
-        backButtom.setVisibility(View.INVISIBLE);
+        backButtom.setText("Omat tiedot");
+        //backButtom.setVisibility(View.INVISIBLE);
         User u=LoginService.getInstance().user;
         setTitle("Käyttäjän "+u.getFirstName()+" kaikki autot");
         
@@ -57,6 +58,17 @@ public class CarsActivity extends ButtonBarActivity{
     	Intent homepage = new Intent(CarsActivity.this, CarSettingsActivity.class);
     	homepage.putExtra("carID", position);
         startActivity(homepage);
+    }
+    
+    @Override
+    public void backTo(View view)
+    {
+	    	Button editButton = (Button)findViewById(R.id.backButton);
+	    	if(editButton.getText().equals("Omat tiedot")) {
+	    	//int position = Integer.parseInt(view.getTag().toString());
+	    	Intent homepage = new Intent(CarsActivity.this, UserSettingsActivity.class);
+	    	startActivity(homepage);
+    	}
     }
     
     public void deleteSelected(View view)

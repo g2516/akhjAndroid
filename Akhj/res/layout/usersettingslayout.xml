@@ -4,14 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/hello_world"
-        android:textSize="22sp" />
-
     <View
         android:id="@+id/spacerLine"
         style="?android:attr/listSeparatorTextViewStyle"
@@ -22,24 +14,6 @@
         android:paddingTop="5dip" />
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spacerLine"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="43dp"
-        android:layout_toLeftOf="@+id/userName"
-        android:text="Etunimi" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_alignParentRight="true"
-        android:ems="10" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,16 +21,6 @@
         android:layout_below="@+id/textView1"
         android:layout_marginTop="23dp"
         android:text="Sukunimi" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignParentRight="true"
-        android:ems="10" >
-
-    </EditText>
 
     <TextView
         android:id="@+id/textView3"
@@ -68,32 +32,26 @@
         android:text="Email" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="106dp"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <EditText
         android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/editText4"
+        android:layout_alignLeft="@+id/editText6"
         android:layout_alignParentRight="true"
         android:ems="10"
         android:inputType="textPassword" />
+
+   <EditText
+       android:id="@+id/editText6"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/editText5"
+       android:layout_alignLeft="@+id/editText3"
+       android:layout_alignParentRight="true"
+       android:ems="10"
+       android:inputType="textPassword" >
+
+    </EditText>
 
     <TextView
         android:id="@+id/textView5"
@@ -101,41 +59,81 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editText5"
         android:layout_alignBottom="@+id/editText5"
-        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignParentLeft="true"
         android:text="Uusi salasana" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText4"
         android:layout_alignBottom="@+id/editText4"
-        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignParentLeft="true"
         android:text="Ja uudestaan" />
-
-   <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText5"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:inputType="textPassword" >
-
-
-    </EditText>
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText6"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignBaseline="@+id/editText6"
+        android:layout_alignBottom="@+id/editText6"
+        android:layout_alignParentLeft="true"
         android:text="Vanha salasana" />
-    
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText5"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="92dp"
+        android:ems="10"
+        android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_below="@+id/buttonbarContainer"
+        android:layout_marginTop="20dp"
+        android:text="Etunimi" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonbarContainer"
+        android:ems="10" />
+
     <include
         android:id="@+id/buttonbarContainer"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         layout="@layout/buttonbar" />
 
 </RelativeLayout>

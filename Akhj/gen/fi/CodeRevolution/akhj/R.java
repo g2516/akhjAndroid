@@ -53,12 +53,12 @@ public final class R {
         public static final int editMalli=0x7f08000f;
         public static final int editMoottori=0x7f080012;
         public static final int editName=0x7f080009;
-        public static final int editText1=0x7f080042;
-        public static final int editText2=0x7f080043;
-        public static final int editText3=0x7f080044;
-        public static final int editText4=0x7f080045;
-        public static final int editText5=0x7f080046;
-        public static final int editText6=0x7f080047;
+        public static final int editText1=0x7f080047;
+        public static final int editText2=0x7f080046;
+        public static final int editText3=0x7f080045;
+        public static final int editText4=0x7f080043;
+        public static final int editText5=0x7f080042;
+        public static final int editText6=0x7f080044;
         public static final int editValmistaja=0x7f08000c;
         public static final int editVuosi=0x7f080015;
         public static final int lblListHeader=0x7f080029;
@@ -66,7 +66,7 @@ public final class R {
         public static final int login=0x7f08002d;
         public static final int lvExp=0x7f080000;
         public static final int removeButton=0x7f080006;
-        public static final int spacerLine=0x7f080041;
+        public static final int spacerLine=0x7f080040;
         public static final int tableRow1=0x7f080007;
         public static final int tableRow2=0x7f08000a;
         public static final int tableRow3=0x7f08000d;
@@ -97,7 +97,7 @@ public final class R {
         public static final int txtPvm=0x7f080024;
         public static final int txtRepairTarget=0x7f080033;
         public static final int txtUserName=0x7f08002e;
-        public static final int userName=0x7f080040;
+        public static final int userName=0x7f080041;
     }
     public static final class layout {
         public static final int all_costs=0x7f030000;
